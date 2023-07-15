@@ -8,11 +8,9 @@ int main () {
 	
 	cout << "digite " << N << " numeros: ";
 	
-	for (int i = 0; i < N; i++)
+	for (int i = 0; i < N; i++){
 		cin >> arrInput[i];
 		
-
-	for (int i = 0; i < N; i++){
 		if (arrInput[i] % 2 == 0)
 			arrEven++;
 		else 

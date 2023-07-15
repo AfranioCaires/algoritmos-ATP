@@ -18,6 +18,6 @@ int main () {
 		soma += input[i];
 	}
 	
-	cout << "A soma eh: " << soma;
+	cout << "A soma dos seus codigos ASCII eh: " << soma;
 	return 0;
 }

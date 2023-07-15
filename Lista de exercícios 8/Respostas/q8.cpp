@@ -10,17 +10,16 @@ int main () {
 	
 	cout << "digite " << N << " numeros: ";
 	
-	for (int i = 0; i < N; i++)
-		cin >> inputArr[i];
-	
 	for (int i = 0; i < N; i++){
+	
+		cin >> inputArr[i];	
 		mediaArr += inputArr[i];
 	}
 	
 	mediaArr /= N;
 	
 	cout << "A media e: " << mediaArr << endl
-	 	 << "Os nummeros maiores que a media sao: ";
+	 	 << "Os nummeros maiores que a media: ";
 	
 	for (int i = 0; i < N; i++){
 		if (inputArr[i] > mediaArr){

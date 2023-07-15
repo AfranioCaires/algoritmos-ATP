@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-const int N = 10;
+const int N = 50;
 
 int main () {
 	
