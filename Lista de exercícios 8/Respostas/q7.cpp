@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-const int N = 50;
+const int N = 10;
 int main () {
 	
 	int arrInput[N], arrEven = 0, arrOdd = 0;
