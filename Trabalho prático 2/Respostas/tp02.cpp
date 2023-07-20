@@ -1,60 +1,64 @@
 #include <iostream>
+#include <string.h>
 using namespace std;
-
 int main () {
 	
-	// entrada do CPF
-	char inputCPF[12];
+	char inputCPF[50];
 	cin >> inputCPF;
 	
-	int dgt1 = inputCPF[9] - 48;
-	int dgt2 = inputCPF[10] - 48;
+	// validacao	
+	int length = strlen(inputCPF);
 	
-	// modificando o valor e fazendo a multiplação 
-	int soma1 = 0;
-	for (int i = 0, j = 10; i < 11; i++, j--){
-		inputCPF[i] -= 48;
-		
-		if (i == 9)
-			break;
-			
-		soma1 += inputCPF[i] * j;
+	if (length != 11){
+		cout << "CPF invalido" << '\a';
+		return 0;
 	}
+	
+	// converter 
+	for (int i = 0; i <= length; i ++)
+		inputCPF[i] -= 48;
 
-	// encontrando o primeiro digito
+	//  realizar soma
+	int soma1 = 0;
+
+	for (int i = 0, j = 10; i < 9 ; i++, j--)	
+		soma1 += inputCPF[i] * j;
+	
+	// achar o primeiro digito
 	
 	int div1 = soma1 / 11;
 	int mod1 = soma1 % 11;
-	int pmrDigito;
+	int verificador1;
 	
-	
-	if (mod1 < 2)
-		pmrDigito = 0;
+	if (div1 < 2)
+		verificador1 = 0;
 	else 
-		pmrDigito = 11 - mod1;
+		verificador1 = 11 - mod1;
 	
-	// segundo digito 
+	// achar o segundo digito
 	int soma2 = 0;
 	
-	for (int i = 0, j = 11; i <= 9; i++, j--){
+	for (int i = 0, j = 11; i < 10 ; i++, j--)
 		soma2 += inputCPF[i] * j;
-	}
 	
 	int div2 = soma2 / 11;
 	int mod2 = soma2 % 11;
-	int sgdDigito;
+	int verificador2;
 	
-	if (mod2 < 2)
-		sgdDigito = 0;
+	if (div2 < 2)
+		verificador2 = 0;
 	else 
-		sgdDigito = 11 - mod2;
- 
-	// validação 
+		verificador2 = 11 - mod2;
 	
-	if (pmrDigito == dgt1 && sgdDigito == dgt2)
-		cout << "valido";
+	// validacao final
+	
+	bool valido = (verificador1 == inputCPF[9] && verificador2 == inputCPF[10]);
+	
+	if (valido)
+		cout << "CPF valido";
 	else
-		cout << "invalido";
-		
+		cout << "CPF invalido" << '\a';
+	
+	
 	return 0;
 }
