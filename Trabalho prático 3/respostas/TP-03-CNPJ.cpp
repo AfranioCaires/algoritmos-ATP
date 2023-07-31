@@ -60,10 +60,13 @@ int main () {
 	
 	// validação final
 	
-	if (verificador1 == numerosCNPJ[12] && verificador2 == numerosCNPJ[13])
-		cout << "CNPJ valido";
-	else
-		cout << "CNPJ invalido";
+	for (int i = 0; i <= 15; i++){
+		cout << pj[i];
+}
+//	if (verificador1 == numerosCNPJ[12] && verificador2 == numerosCNPJ[13])
+//		cout << "CNPJ valido";
+//	else
+//		cout << "CNPJ invalido";
 		
 	return 0;
 }
